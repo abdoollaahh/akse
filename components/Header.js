@@ -12,7 +12,8 @@ export default function Header() {
   const theme = useTheme();
 
   const navLinks = [
-    { name: "Products", path: "/products" },
+    { name: "Luxury Tourism", path: "/verticals/luxury-tourism" },
+    { name: "Heritage & Events", path: "/verticals/heritage-cultural" },
     { name: "Services", path: "/services" },
     { name: "Demo", path: "/demo" },
     { name: "About", path: "/about" },
@@ -103,22 +104,8 @@ export default function Header() {
           ))}
         </Box>
 
-        {/* Book Button - Right */}
-        <Box sx={{ flex: "0 0 auto", display: { xs: "none", md: "block" } }}>
-          <Link href="/book">
-            <Button
-              variant="contained"
-              sx={{
-                bgcolor: "#fff",
-                color: theme.palette.primary.main,
-                "&:hover": {
-                  bgcolor: "rgba(255, 255, 255, 0.9)",
-                }
-              }}
-            >
-              Book a Tour
-            </Button>
-          </Link>
+        {/* Navigation spacer */}
+        <Box sx={{ flex: "0 0 auto", display: { xs: "none", md: "block" }, width: "80px" }}>
         </Box>
 
         {/* Mobile Menu Icon */}

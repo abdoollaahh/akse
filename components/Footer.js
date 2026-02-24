@@ -88,8 +88,9 @@ export default function Footer() {
             <Box component="nav" sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
               {[
                 { label: "Home", path: "/" },
-                { label: "Products", path: "/products" },
                 { label: "Services", path: "/services" },
+                { label: "Luxury Tourism", path: "/verticals/luxury-tourism" },
+                { label: "Heritage & Events", path: "/verticals/heritage-cultural" },
                 { label: "Demo", path: "/demo" },
                 { label: "About", path: "/about" },
               ].map((item) => (

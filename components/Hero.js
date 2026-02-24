@@ -99,7 +99,7 @@ export default function Hero() {
           </Typography>
 
           <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
-            <Link href="/products">
+            <Link href="/services">
               <Button
                 variant="contained"
                 color="primary"
@@ -109,38 +109,8 @@ export default function Hero() {
                   padding: "16px 40px",
                 }}
               >
-                Start Exploring
+                Our Services
               </Button>
-            </Link>
-            <Link href="/book">
-              <GlassSurface
-                width="auto"
-                height="auto"
-                borderRadius={50}
-                brightness={100}
-                opacity={0.2}
-                blur={12}
-                borderWidth={0.15}
-                noPadding={true}
-                className={styles['hero-glass-button']}
-                style={{ display: "inline-block" }}
-              >
-                <Button
-                  size="large"
-                  sx={{
-                    fontSize: "1.1rem",
-                    padding: "16px 40px",
-                    color: "#fff",
-                    fontWeight: 600,
-                    minWidth: "auto",
-                    "&:hover": {
-                      background: "rgba(255,255,255,0.1)",
-                    },
-                  }}
-                >
-                  Book a Tour
-                </Button>
-              </GlassSurface>
             </Link>
           </Box>
         </Box>
