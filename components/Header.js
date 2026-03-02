@@ -12,11 +12,11 @@ export default function Header() {
   const theme = useTheme();
 
   const navLinks = [
-    { name: "Luxury Tourism", path: "/verticals/luxury-tourism" },
+    /* { name: "Luxury Tourism", path: "/verticals/luxury-tourism" },
     { name: "Heritage & Events", path: "/verticals/heritage-cultural" },
     { name: "Services", path: "/services" },
     { name: "Demo", path: "/demo" },
-    { name: "About", path: "/about" },
+    { name: "About", path: "/about" }, */
   ];
 
   return (

@@ -1,6 +1,82 @@
-import Hero from "../components/Hero";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import FaultyTerminal from "../components/FaultyTerminal";
+import Head from "next/head";
+
+export default function Home() {
+  return (
+    <div
+      style={{
+        backgroundColor: "#000",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+      }}
+    >
+      <Head>
+        <title>Site Taken Down</title>
+      </Head>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 0,
+        }}
+      >
+        <FaultyTerminal
+          scale={1.5}
+          gridMul={[2, 1]}
+          digitSize={1.2}
+          timeScale={0.5}
+          pause={false}
+          scanlineIntensity={0.5}
+          glitchAmount={1}
+          flickerAmount={1}
+          noiseAmp={1}
+          chromaticAberration={0}
+          dither={0}
+          curvature={0.1}
+          tint="#A7EF9E"
+          mouseReact
+          mouseStrength={0.5}
+          pageLoadAnimation
+          brightness={0.6}
+        />
+      </div>
+
+      <Box
+        sx={{
+          zIndex: 1,
+          textAlign: "center",
+          pointerEvents: "none",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 4,
+        }}
+      >
+        <img
+          src="/logo.png"
+          alt="Logo"
+          style={{
+            width: "300px",
+            filter: "drop-shadow(0 0 10px rgba(167, 239, 158, 0.5))",
+          }}
+        />
+      </Box>
+    </div>
+  );
+}
+
+/*
+import Hero from "../components/Hero";
+// import Box from "@mui/material/Box";
+// import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import { Container } from "@mui/material";
 import BlogCard from "../components/BlogCard";
@@ -37,14 +113,13 @@ const archivePosts = [
   },
 ];
 
-export default function Home() {
+export default function OldHome() {
   const theme = useTheme();
 
   return (
     <div>
       <Hero />
 
-      {/* From The Archive */}
       <section className="container" style={{ marginTop: 120, marginBottom: 120 }}>
         <Box sx={{ textAlign: "center", mb: 8 }}>
           <Typography variant="h2" sx={{ mb: 2 }}>
@@ -86,7 +161,6 @@ export default function Home() {
         </Box>
       </section>
 
-      {/* Magic Bento Grid Section */}
       <Box sx={{ py: 10, bgcolor: "#000", position: "relative" }}>
         <Container maxWidth="lg">
           <Typography
@@ -107,7 +181,6 @@ export default function Home() {
         </Container>
       </Box>
 
-      {/* 3D Guides Feature Section */}
       <Box sx={{ bgcolor: "#fff", py: 15, position: "relative", overflow: "hidden" }}>
         <div className="container">
           <Grid container spacing={8} alignItems="center">
@@ -180,7 +253,6 @@ export default function Home() {
         </div>
       </Box>
 
-      {/* Testimonials */}
       <Box
         className="grain-texture"
         sx={{
@@ -221,8 +293,6 @@ export default function Home() {
         </div>
       </Box>
 
-      {/* Newsletter */}
-      {/* Newsletter Section */}
       <Box
         sx={{
           py: 10,
@@ -269,7 +339,6 @@ export default function Home() {
               </Box>
             </Grid>
             <Grid item xs={12} md={6}>
-              {/* Optional image or graphic could go here */}
             </Grid>
           </Grid>
         </Container>
@@ -277,3 +346,4 @@ export default function Home() {
     </div>
   );
 }
+*/
