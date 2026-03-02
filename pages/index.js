@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import { Container } from "@mui/material";
-import TourCard from "../components/TourCard";
+import BlogCard from "../components/BlogCard";
 import MagicBento from "../components/MagicBento";
 import SpotlightCard from "../components/SpotlightCard";
 import Button from "@mui/material/Button";
@@ -12,25 +12,28 @@ import Avatar from "@mui/material/Avatar";
 import Link from "next/link";
 import { useTheme } from "@mui/material/styles";
 
-const featured = [
+const archivePosts = [
   {
-    title: "Hunza Adventure Trip",
-    summary: "High mountain vistas, local homestays and guided hikes through the ancient valleys of Hunza.",
-    price: "PKR 85,000",
-    image: "https://images.unsplash.com/photo-1611821376205-3d0bf56c0ee2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    title: "Islamabad Heritage Tour",
-    summary: "Architectural walks and cultural storytelling in the capital. Discover the hidden gems of Islamabad.",
-    price: "PKR 25,000",
-    image: "https://images.unsplash.com/photo-1705609312569-614e3ddf2770?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    title: "Karachi Street Food",
-    summary: "Taste the city—late-night food walks and chef meetups in the heart of Karachi's culinary scene.",
-    price: "PKR 8,500",
+    title: "The Silent Stones of Saidpur: A 3D Walkthrough of Time",
+    excerpt:
+      "A 500-year-old multi-faith village in the Margalla Hills — frozen in a digital twin you can explore from anywhere on Earth.",
+    category: "Sacred Spaces",
+    readTime: "12 min read",
     image:
-      "https://images.unsplash.com/photo-1680505305209-cef1cb716b1c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://www.reddit.com/media?url=https%3A%2F%2Fexternal-preview.redd.it%2FXF_L4gLEWF92hxiT_TuWpCgns_C0bv5OqWpqYmrnvug.jpg%3Fwidth%3D1080%26crop%3Dsmart%26auto%3Dwebp%26s%3D2cec5b025054cfaf850715b901122780df5b7ebd",
+    slug: "/archive/saidpur-3d-walkthrough",
+    accentColor: "#CC5500",
+  },
+  {
+    title: "Steam and Steel: Reliving the Golden Age at Golra Railway Station",
+    excerpt:
+      "Step inside Victorian coaches frozen in time. Our Interior Scan captures details even on-site visitors miss.",
+    category: "Industrial History",
+    readTime: "10 min read",
+    image:
+      "https://i.dawn.com/primary/2015/01/54c5fcdd0a507.jpg?r=1390485840",
+    slug: "/archive/golra-railway-museum",
+    accentColor: "#0F4C5C",
   },
 ];
 
@@ -41,23 +44,46 @@ export default function Home() {
     <div>
       <Hero />
 
-      {/* Featured Tours Section */}
+      {/* From The Archive */}
       <section className="container" style={{ marginTop: 120, marginBottom: 120 }}>
         <Box sx={{ textAlign: "center", mb: 8 }}>
           <Typography variant="h2" sx={{ mb: 2 }}>
-            Featured <span className="gradient-text">Experiences</span>
+            From <span className="gradient-text">The Archive</span>
           </Typography>
-          <Typography className="muted" sx={{ maxWidth: 600, mx: "auto" }}>
-            Curated tours that take you beyond the ordinary. Experience the authentic culture and breathtaking landscapes of Pakistan.
+          <Typography className="muted" sx={{ maxWidth: 640, mx: "auto" }}>
+            Long-form stories on heritage preservation, powered by our 3D scanning technology. Read, explore, and walk through history.
           </Typography>
         </Box>
-        <Grid container spacing={4}>
-          {featured.map((t) => (
-            <Grid item xs={12} md={4} key={t.title}>
-              <TourCard tour={t} />
+        <Grid container spacing={4} justifyContent="center">
+          {archivePosts.map((post) => (
+            <Grid item xs={12} md={6} key={post.slug}>
+              <BlogCard post={post} />
             </Grid>
           ))}
         </Grid>
+        <Box sx={{ textAlign: "center", mt: 6 }}>
+          <Link href="/archive">
+            <Button
+              variant="outlined"
+              size="large"
+              sx={{
+                borderColor: theme.palette.primary.main,
+                color: theme.palette.primary.main,
+                borderRadius: "100px",
+                px: 5,
+                py: 1.5,
+                textTransform: "none",
+                fontWeight: 600,
+                "&:hover": {
+                  borderColor: theme.palette.primary.main,
+                  background: "rgba(204, 85, 0, 0.08)",
+                },
+              }}
+            >
+              Browse The Archive →
+            </Button>
+          </Link>
+        </Box>
       </section>
 
       {/* Magic Bento Grid Section */}

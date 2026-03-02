@@ -114,6 +114,37 @@ export default function Footer() {
             </Box>
           </Grid>
 
+          {/* The Archive */}
+          <Grid item xs={6} md={2}>
+            <Typography variant="h6" sx={{ fontWeight: 700, mb: 3, color: "#fff" }}>
+              The Archive
+            </Typography>
+            <Box component="nav" sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
+              {[
+                { label: "Sacred Spaces", path: "/archive" },
+                { label: "Industrial History", path: "/archive" },
+                { label: "Luxury Living", path: "/archive" },
+              ].map((item) => (
+                <Link href={item.path} key={item.label}>
+                  <Typography
+                    sx={{
+                      color: "#999",
+                      fontSize: "0.95rem",
+                      "&:hover": {
+                        color: theme.palette.primary.main,
+                        paddingLeft: "4px",
+                      },
+                      transition: "all 0.2s",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {item.label}
+                  </Typography>
+                </Link>
+              ))}
+            </Box>
+          </Grid>
+
           {/* Support Links */}
           <Grid item xs={6} md={2}>
             <Typography variant="h6" sx={{ fontWeight: 700, mb: 3, color: "#fff" }}>

@@ -104,8 +104,34 @@ export default function Header() {
           ))}
         </Box>
 
-        {/* Navigation spacer */}
-        <Box sx={{ flex: "0 0 auto", display: { xs: "none", md: "block" }, width: "80px" }}>
+        {/* The Archive — CTA Button */}
+        <Box sx={{ flex: "0 0 auto", display: { xs: "none", md: "block" } }}>
+          <Link href="/archive">
+            <Button
+              variant="contained"
+              sx={{
+                background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, #E06600 100%)`,
+                color: "#fff",
+                fontWeight: 700,
+                fontSize: "0.85rem",
+                letterSpacing: "0.04em",
+                px: 3,
+                py: 1,
+                borderRadius: "100px",
+                textTransform: "none",
+                boxShadow: `0 0 20px rgba(204, 85, 0, 0.25)`,
+                border: "1px solid rgba(255, 255, 255, 0.12)",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  background: `linear-gradient(135deg, #E06600 0%, ${theme.palette.primary.main} 100%)`,
+                  boxShadow: `0 0 30px rgba(204, 85, 0, 0.45)`,
+                  transform: "translateY(-1px)",
+                },
+              }}
+            >
+              The Archive
+            </Button>
+          </Link>
         </Box>
 
         {/* Mobile Menu Icon */}
